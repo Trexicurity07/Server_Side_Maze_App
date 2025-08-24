@@ -1,0 +1,76 @@
+
+/* FLASK SEARCHES FOR PAGE TEMPLATES IN  'templates'  FOLDER BY DEFAULT
+FLASK SEARCHES FOR PAGE CSS IN  'static/css'  FOLDER BY DEFAULT
+FLASK SEARCHES FOR PAGE IMAGES IN  'static/images'  FOLDER BY DEFAULT */
+
+:root {
+    --SuccessColour : 29, 137, 80;
+    --FailColour : 143, 32, 30;
+}
+/* Acts as python variables, store values for rgb to avoid repeating values and change them easily */
+/* Accessible by var(--VariableName) */
+
+body {
+    box-sizing : border-box; 
+    /* Default page height  =  specified height +  padding + margin */
+    /* Border box page height  =  specified height, body adjusts to make room for any padding + margin*/
+
+    height : 100vh;
+    background-color : #c4c7cc;
+    margin : 0%;
+}
+
+.Success {
+    border: 1px solid rgb(var(--SuccessColour));  /* Creates border with specified colour */
+    animation: SuccessPulse 2s infinite ease-in-out;  /* Plays looping animation every 2s */
+}
+/* Ran when <body class = 'Success'>  used for playing success animation */
+
+.Fail {
+    border: 1px solid rgb(var(--FailColour));  /* Creates border with specified colour */
+    animation: FailPulse 2s infinite ease-in-out;  /* Plays looping animation every 2s */
+}
+/* Ran when <body class = 'Fail'>  used for playing fail animation */
+
+@keyframes SuccessPulse {
+    0% { box-shadow : inset 0 0 80px 15px rgba(var(--SuccessColour), 0.2);}
+    50% { box-shadow :  inset 0 0 80px 25px rgba(var(--SuccessColour), 0.8);}
+    100% { box-shadow : inset 0 0 80px 15px rgba(var(--SuccessColour), 0.2);}
+}
+/* Percentages indicate % of animation play time (2s) at which this keyframe is achieved */
+/* box-shadow : (shadow in or out)  offsetX  offsetY  blend  size  colour */
+
+@keyframes FailPulse {
+    0% { box-shadow : inset 0 0 80px 15px rgba(var(--FailColour), 0.2);}
+    50% { box-shadow :  inset 0 0 80px 25px rgba(var(--FailColour), 0.8);}
+    100% { box-shadow : inset 0 0 80px 15px rgba(var(--FailColour), 0.2);}
+}
+/* Percentages indicate % of animation play time (2s) at which this keyframe is achieved */
+/* box-shadow : (shadow in or out)  offsetX  offsetY  blend  size  colour */
+
+div {
+    height : 90vh;
+    font-family : 'Jura';  /* Applies custom google fonts font */
+    display : flex;
+    /* Default position of elements guided by margins and paddings */
+    /* Display flex allows positioning by alignment with objects */
+
+    flex-direction : column;  /* Stacks adjacent elements vertically instead of horizontally */
+    align-items : center;
+    justify-content : center;
+}
+
+img {
+    margin-bottom : 16px;
+}
+
+h3 {
+    margin-bottom : 20px;
+    font-weight : 700;
+}
+
+p {
+    font-size : 14px;
+    font-weight : 450;
+    margin : 4px;
+}

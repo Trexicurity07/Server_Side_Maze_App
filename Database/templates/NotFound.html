@@ -1,0 +1,36 @@
+
+<!--  FLASK SEARCHES FOR PAGE TEMPLATES IN  'templates'  FOLDER BY DEFAULT  -->
+<!--  FLASK SEARCHES FOR PAGE CSS IN  'static/css'  FOLDER BY DEFAULT  -->
+<!--  FLASK SEARCHES FOR PAGE IMAGES IN  'static/images'  FOLDER BY DEFAULT  -->
+
+<!DOCTYPE html>  <!-- Defines document as HTML5 -->
+
+<html>
+<head>
+
+    <title>Verification Failed</title>
+
+    <link rel = 'preconnect' href = 'https://fonts.googleapis.com'>
+    <link rel = 'preconnect' href = 'https://fonts.gstatic.com' crossorigin>
+    <link href = 'https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap' rel = 'stylesheet'>
+    <!-- CODE PASTED FROM GOOGLE FONTS -->
+    <!-- Imports google font for use in css -->
+
+    <link rel = 'stylesheet' href = '/static/css/posterama.css'>
+    <!-- Applies css file to this html document -->
+    <!-- Flask template renderer interprets  /static/  (default for non html files) 
+    as the  static/  folder regardless of whether  static/  is in the same folder as this file -->
+
+</head>
+
+<body class = 'Fail'>
+    <div>
+        <img src = '/static/images/Cross.png' width = '112' height= '112'>
+        <!-- Flask template renderer interprets  /static/  (default for non html files) 
+         as the  static/  folder regardless of whether  static/  is in the same folder as this file -->
+
+        <h3>ERROR : 404 !</h3>
+        <p>Page not found</p>
+    </div>
+</body>
+</html>
