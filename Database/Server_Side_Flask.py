@@ -252,17 +252,13 @@ def NoPage(Error):
     return render_template('NotFound.html')
 
 
-if __name__ == '__main__':
-    UsersTimstamp = datetime.now(timezone.utc)  #  timezone.uts to convert local time into utc
-    # Timestamp ordering only exists for users as no other table requires unique, user-enterable data
 
-    Gmail = SMTP_SSL('smtp.gmail.com', 465)  #  Connects to gmails port
-    Gmail.login('dummyemailnea@gmail.com', 'blus ofur oiys gqez')
-    # Python scripts arent secure so gmail requires 16 char app app password
+UsersTimstamp = datetime.now(timezone.utc)  #  timezone.uts to convert local time into utc
+# Timestamp ordering only exists for users as no other table requires unique, user-enterable data
 
-    TokenToUserDict = {}
-    EmailTokenDict = {}
-    Host = '127.0.0.1'  # Set host = '0.0.0.0' or public domain at runtime
-    App.run(host = Host, port = 5000)
-# Whenever file runs directly, it creates starting timestamps for concurrent access
-# Creates temporary tokens for users and executes flask
+Gmail = SMTP_SSL('smtp.gmail.com', 465)  #  Connects to gmails port
+Gmail.login('dummyemailnea@gmail.com', 'blus ofur oiys gqez')
+# Python scripts arent secure so gmail requires 16 char app app password
+
+TokenToUserDict = {}
+EmailTokenDict = {}
