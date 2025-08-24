@@ -44,7 +44,7 @@ def Signup():
         # Adds to log of tokens used for email validation and sets their IssuedTime for timestamp ordering
 
         try:
-            Gmail.sendmail('DummyEmailNEA@gmail.com', JsonData['email'], f'Click the following link to authenticate your account :\n\nhttp://{Host}:5000/EmailAuth/{Token}')
+            Gmail.sendmail('DummyEmailNEA@gmail.com', JsonData['email'], f'Click the following link to authenticate your account :\n\nhttps://server-side-maze-app.onrender.com/{Token}')
             # Sends email with authentication link to user address
 
         except:
@@ -261,4 +261,5 @@ Gmail.login('dummyemailnea@gmail.com', 'blus ofur oiys gqez')
 # Python scripts arent secure so gmail requires 16 char app app password
 
 TokenToUserDict = {}
+
 EmailTokenDict = {}
