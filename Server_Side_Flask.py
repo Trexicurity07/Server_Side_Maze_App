@@ -61,14 +61,12 @@ def EmailAuth(Token):
     
     try:
         if (EmailTokenDict[Token]['IssuedTime'] + timedelta(minutes = 30)) > datetime.now(timezone.utc):
-            print(1)
 
             global UsersTimstamp
             # local assignment overrides scope of variable assigned in if __name__ == '__main__'
             # No simple workaround as flask routes and methods do not take parameters from rest of script
 
             if CheckTimestamp(UsersTimstamp, EmailTokenDict[Token]['IssuedTime']):
-                print(2)
 
                 UsersTimstamp = datetime.now(timezone.utc)
                 # Updates last edit for timestamp ordering
@@ -83,9 +81,7 @@ def EmailAuth(Token):
                 }
                 del EmailTokenDict[Token]
                 # Removes this token from dict and reassigns user data for easy parsing
-                print(3)
                 Create('Users', UserInfo)
-                print(4)
                 return render_template('Successful.html')
                 # Parses users information from dict
                 # Sends user webpage notifying that signup was a success
@@ -213,7 +209,6 @@ def UserComments(Token):
             CommentsList[index] = SingleMaze
     # If comments are pulled from user profile, fetch the mazes linked to these comments aswell
 
-    print(CommentsList,'Printed')
     return jsonify(CommentsList)
     
 
@@ -263,3 +258,4 @@ Gmail.login('dummyemailnea@gmail.com', 'blus ofur oiys gqez')
 TokenToUserDict = {}
 
 EmailTokenDict = {}
+
