@@ -252,7 +252,7 @@ UsersTimstamp = datetime.now(timezone.utc)  #  timezone.uts to convert local tim
 # Timestamp ordering only exists for users as no other table requires unique, user-enterable data
 
 Gmail = SMTP_SSL('smtp.gmail.com', 465)  #  Connects to gmails port
-Gmail.login('dummyemailnea@gmail.com', 'blus ofur oiys gqez')
+Gmail.login('dummyemailnea@gmail.com', 'zoid kzzh fysu fhng')
 # Python scripts arent secure so gmail requires 16 char app app password
 
 TokenToUserDict = {}
